@@ -1,8 +1,7 @@
 import java.io.File
 import java.util.regex.Pattern.compile
 
-val passports =
-    File("/Users/pco38/Library/Application Support/JetBrains/IntelliJIdea2020.3/scratches/2020/in/input4.txt").readText()
+val passports = File("input4.txt").readText()
         .split("\n\n") // passport delimiter
         .map { it.replace("\n", " ") } // all passport fields in one line
 
@@ -20,7 +19,7 @@ val regexes = mapOf(
     "pid" to compile("[0-9]{9}")
 )
 
-fun main() {
+fun day4() {
     val sol1 = passports.filter { it.fields().map { it.name }.containsAll(required) }
 
     val sol2 = passports
@@ -34,5 +33,3 @@ fun main() {
     println("Sol1: ${sol1.count()}")
     println("Sol2: ${sol2.count()}")
 }
-
-main()

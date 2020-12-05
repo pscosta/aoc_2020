@@ -1,9 +1,8 @@
 import java.io.File
 
-val path = File("/Users/pco38/Library/Application Support/JetBrains/IntelliJIdea2020.3/scratches/2020/in/input3.txt")
-    .readLines()
+val path = File("input3.txt").readLines()
 
-fun main() {
+fun day3() {
     println("Sol1: ${run(3, 1)}")
     println("Sol2: ${run(1, 1) * run(3, 1) * run(5, 1) * run(7, 1) * run(1, 2)}")
 }
@@ -21,5 +20,3 @@ fun run(xSlope: Int, ySlope: Int): Long {
     }
     return tres
 }
-
-main()

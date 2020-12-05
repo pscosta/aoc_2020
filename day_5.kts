@@ -1,11 +1,8 @@
 import java.io.File
 import kotlin.math.pow
 
-val passports =
-    File("/Users/pco38/Library/Application Support/JetBrains/IntelliJIdea2020.3/scratches/2020/in/input5.txt").readLines()
-
-fun main() {
-    val sIDs = passports
+fun day5() {
+    val sIDs = File("input5.txt").readLines()
         .map { it.reversed() }
         .map { row ->
             row.indices
@@ -20,5 +17,3 @@ fun main() {
         if (sIDs[i] != (sIDs[(i - 1)] + 1))
             println("Sol2: ${sIDs[i] - 1}")
 }
-
-main()

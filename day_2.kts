@@ -2,8 +2,8 @@ import java.io.File
 
 data class Pwd(val min: Int, val max: Int, val char: Char, val pwd: String)
 
-fun main(args: List<String>) {
-    val rows = args.map {
+fun day2(args: List<String>) {
+    val rows = File("input2.txt").readLines().map {
         val r = it.split(":")
         val min = r[0].split(" ")[0].split("-")[0]
         val max = r[0].split(" ")[0].split("-")[1]
@@ -17,5 +17,3 @@ fun main(args: List<String>) {
     val s2 = rows.count { r -> (r.pwd[r.min - 1] == r.char) xor (r.pwd[r.max - 1] == r.char) }
     println("Sol 2: $s2")
 }
-
-main(File("/Users/pco38/Library/Application Support/JetBrains/IntelliJIdea2020.2/scratches/2020/in/input2.txt").readLines())
