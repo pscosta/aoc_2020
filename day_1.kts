@@ -6,7 +6,7 @@ fun day1() {
     sol1@ for (a in input)
         for (b in input)
             if (a + b == 2020) {
-                println("Solution 1: ${a * b} - $a, $b")
+                println("Sol1: ${a * b}")
                 break@sol1
             }
 
@@ -14,7 +14,7 @@ fun day1() {
         for (b in input)
             for (c in input)
                 if (a + b + c == 2020) {
-                    println("Solution 2: ${a * b * c} - $a, $b, $c")
+                    println("Sol2: ${a * b * c}")
                     break@sol2
                 }
 }
