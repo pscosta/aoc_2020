@@ -7,8 +7,7 @@ fun day6() {
         .sumBy { it.groupBy { it }.size }
         .also { println("Sol1: $it") }
 
-    groups.sumBy { g -> g.trim()
-            .groupBy { it }
-            .filter { it.value.size == g.split("\n").size }.size
-    }.also { println("Sol1: $it") }
+    groups.sumBy { g -> g.groupBy { it }
+        .filter { it.value.size == g.split("\n").size }.size }
+        .also { println("Sol2: $it") }
 }
