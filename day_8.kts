@@ -1,8 +1,8 @@
 import java.io.File
 
-val input = File("input8.txt").readLines().map { Op(it.split(" ")[0], it.split(" ")[1].toLong()) }
+val input = File("input8.txt").readLines().map { Op(it.split(" ")[0], it.split(" ")[1].toInt()) }
 
-data class Op(var code: String, val arg: Long)
+data class Op(var code: String, val arg: Int)
 var acc = 0L
 
 fun run(): Int {
