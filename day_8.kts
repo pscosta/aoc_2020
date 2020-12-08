@@ -6,21 +6,20 @@ data class Op(var code: String, val arg: Long)
 var acc = 0L
 
 fun run(): Int {
-    acc = 0L
-    var pc = 0L
-    val dup = mutableMapOf<Long, Long>()
+    acc = 0
+    var pc = 0
+    val duplicates = input.map { 0 }.toIntArray()
 
     while (true) {
-        val next = input[pc.toInt()]
-        if (dup[pc] != null) dup[pc] = dup[pc]!! + 1 else dup[pc] = 0L
-
+        duplicates[pc]++
+        val next = input[pc]
         when (next.code) {
             "nop" -> pc++
             "jmp" -> pc += next.arg
             "acc" -> acc += next.arg.also { pc++ }
         }
-        if (dup.values.any { it > 0 }) return -1
-        if (pc.toInt() == input.size) return 0
+        if (duplicates.any { it > 1 }) return -1
+        if (pc == input.size) return 0
     }
 }
 
